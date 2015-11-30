@@ -41,7 +41,9 @@ module.exports.routes = {
     'get /api/1/jsonld/flatten': 'JSONLDController.getFlatten',
     'get /api/1/jsonld/rdf': 'JSONLDController.getRDF',
     'post /api/1/jsonld/spouse': 'JSONLDController.addSpouse',
-    'post /api/1/jsonld/child': 'JSONLDController.addChild'
+    'post /api/1/jsonld/child': 'JSONLDController.addChild',
+    'post /api/1/json/spouse':'JSONController.addSpouse',
+    'post /api/1/json/child':'JSONController.addChild'
 
     /***************************************************************************
      *                                                                          *
