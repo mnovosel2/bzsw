@@ -67,7 +67,7 @@ module.exports.http = {
                     return xmlParser(req, res, next);
                 }
                 // Otherwise let Skipper handle it
-                return skipper(req, res, next);
+                return next();
             };
 
         }
