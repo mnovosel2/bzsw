@@ -470,5 +470,5 @@ module.exports = {
             }]
         }]
     },
-    port:6987
+    port: 6987
 };

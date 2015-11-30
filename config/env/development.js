@@ -131,10 +131,6 @@ module.exports = {
             "bozanstvo": "Bog",
             "slika": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Mnemosyne_Dante_Gabriel_Rossetti.jpg/220px-Mnemosyne_Dante_Gabriel_Rossetti.jpg",
             "djeca": [{
-                "ime": "Kaliopa",
-                "bozanstvo": "Muza",
-                "slika": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Calliope.jpg/220px-Calliope.jpg"
-            }, {
                 "ime": "Klio",
                 "bozanstvo": "Muza",
                 "slika": "https://upload.wikimedia.org/wikipedia/commons/0/01/Clio.jpg"
@@ -362,10 +358,6 @@ module.exports = {
                 "@id": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Mnemosyne_Dante_Gabriel_Rossetti.jpg/220px-Mnemosyne_Dante_Gabriel_Rossetti.jpg"
             },
             "https://schema.org/children": [{
-                "https://schema.org/name": "Kaliopa",
-                "https://schema.org/character": "Muza",
-                "https://schema.org/image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Calliope.jpg/220px-Calliope.jpg"
-            }, {
                 "https://schema.org/name": "Klio",
                 "https://schema.org/character": "Muza",
                 "https://schema.org/image": {
@@ -474,6 +466,4 @@ module.exports = {
             }]
         }]
     }
-
-
 };
