@@ -46,7 +46,7 @@ module.exports.routes = {
     'post /api/1/json/spouse':'JSONController.addSpouse',
     'post /api/1/json/child':'JSONController.addChild',
     'post /api/1/xml/spouse': 'XMLController.addSpouse',
-
+    'post /api/1/xml/child': 'XMLController.addChild',
     /***************************************************************************
      *                                                                          *
      * Custom routes here...                                                    *
