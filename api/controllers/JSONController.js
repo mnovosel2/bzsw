@@ -49,5 +49,10 @@ module.exports = {
         res.send(400, {
             status: 400
         });
+    },
+    getImages:function(req,res){
+    	res.send({
+    		data:sails.config.jsonImages
+    	});
     }
 };
