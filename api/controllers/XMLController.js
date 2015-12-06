@@ -33,7 +33,6 @@ module.exports = {
             spouse.ime = data.item.ime;
             spouse.bozanstvo=data.item.bozanstvo;
             spouse.slika=data.item.slika;
-            spouse.djeca=data.item.djeca || [];
 
             sails.log(sails.config.jsonContent.zene[spousesLength - 1]);
             sails.config.jsonContent.zene[spousesLength] = spouse;

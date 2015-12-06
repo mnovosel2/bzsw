@@ -47,7 +47,6 @@ module.exports = {
             res.send(nquads);
         });
     },
-  
     addSpouse: function(req, res) {
         var spousesLength = sails.config.ldContent["https://schema.org/spouse"].length,
             spouse = req.body;
