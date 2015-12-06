@@ -47,30 +47,6 @@ module.exports.http = {
     //   '404',
     //   '500'
     // ],
-    bodyParser: function(opts) {
-            // Get an XML parser instance
-            var xmlParser = require('express-xml-bodyparser')({
-                // options will apply to is-type 
-                type: ['xml'], 
-                limit: '1mb',  
-                encoding: 'utf8',  
-                trim: false
-            });
-            // Get a Skipper instance (handles URLencoded, JSON-encoded and multipart)
-            var skipper = require('skipper');
-            // Return a custom middleware function
-            return function(req, res, next) {
-                console.log('XML');
-                // If it looks like XML, parse it as XML
-                if (req.headers && (req.headers['content-type'] == 'text/xml' || req.headers['content-type'] == 'application/xml')) {
-                    
-                    return xmlParser(req, res, next);
-                }
-                // Otherwise let Skipper handle it
-                return next();
-            };
-
-        }
         /****************************************************************************
          *                                                                           *
          * Example custom middleware; logs each request to the console.              *

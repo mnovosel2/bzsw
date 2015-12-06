@@ -12,6 +12,7 @@ module.exports = {
     addSpouse: function(req, res) {
         var spousesLength = defaultJSON.zene.length,
             spouse = req.body;
+        sails.log(spouse);
         defaultJSON.zene[spousesLength - 1] = spouse;
         res.send({
             status: 200

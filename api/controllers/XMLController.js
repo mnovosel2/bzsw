@@ -30,7 +30,12 @@ module.exports = {
                     status: 500
                 });
             }
-            spouse = data.item;
+            spouse.ime = data.item.ime;
+            spouse.bozanstvo=data.item.bozanstvo;
+            spouse.slika=data.item.slika;
+            spouse.djeca=data.item.djeca || [];
+
+            sails.log(spouse);
             defaultJSON.zene[spousesLength - 1] = spouse;
             res.send({
                 status: 200
