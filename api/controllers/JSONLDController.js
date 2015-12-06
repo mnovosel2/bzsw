@@ -50,6 +50,7 @@ module.exports = {
     addSpouse: function(req, res) {
         var spousesLength = sails.config.ldContent["https://schema.org/spouse"].length,
             spouse = req.body;
+        sails.log(spouse);
         sails.config.ldContent["https://schema.org/spouse"][spousesLength] = spouse;
         res.send({
             status: 200
