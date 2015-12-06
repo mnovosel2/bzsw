@@ -50,7 +50,7 @@ module.exports = {
     addSpouse: function(req, res) {
         var spousesLength = sails.config.ldContent["https://schema.org/spouse"].length,
             spouse = req.body;
-        sails.config.ldContent["https://schema.org/spouse"][spousesLength - 1] = spouse;
+        sails.config.ldContent["https://schema.org/spouse"][spousesLength] = spouse;
         res.send({
             status: 200
         });
@@ -65,16 +65,16 @@ module.exports = {
             	sails.log("A");
             	if("https://schema.org/children" in tmpSpouse){
             		sails.log("B");
-            		delete childInfo["https://schema.org/spouse"]; 
+            		delete childInfo["https://schema.org/spouse"];
             		tmpSpouse["https://schema.org/children"].push(childInfo);
-            		
+
             	}else{
             		delete childInfo["https://schema.org/spouse"];
             		sails.log("C");
             		tmpSpouse["https://schema.org/children"]=[];
             		tmpSpouse["https://schema.org/children"].push(childInfo);
             	}
-               
+
                 spouseExist = true;
                 break;
             }

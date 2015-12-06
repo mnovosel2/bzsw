@@ -471,5 +471,6 @@ module.exports = {
         }]
     },
     jsonImages:['http://img14.deviantart.net/e52e/i/2012/084/2/a/hermes___greek_gods_project_by_isikol-d4tqwvp.jpg','http://www.greek-mythology-pantheon.com/wp-content/uploads/Greek_Gods_and_Goddesses/Artemis_Diana_Greek_Goddess/Artemis_Diana_Greek_Goddess_Art_01_by_michael_c_hayes.jpg','https://historymaniacmegan.files.wordpress.com/2014/09/da59fdee1dca55b2288f3bd87dbc932c.jpg','http://www.greek-mythology-pantheon.com/wp-content/uploads/Greek_Gods_and_Goddesses/Athena_Minerva_Greek_Goddess/Athena_Minerva_Greek_Goddess_Art_19_by_nero_tbs.jpg','http://www.foodnculture.com/wp-content/uploads/2014/08/ares.jpg'],
-    port: 6987
+    port: 6987,
+    proxyHost:'95.85.26.58'
 };

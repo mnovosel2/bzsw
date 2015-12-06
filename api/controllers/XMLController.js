@@ -4,13 +4,13 @@
  * @description :: Server-side logic for managing XMLS
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
-var defaultJSON = sails.config.jsonContent,
-    parser = require('xml2json'),
+
+var parser = require('xml2json'),
     toXml = require('xmljson').to_xml,
     toJson = require('xmljson').to_json;
 module.exports = {
     getDefault: function(req, res) {
-        toXml(JSON.stringify(defaultJSON), function(err, xml) {
+        toXml(JSON.stringify(sails.config.jsonContent), function(err, xml) {
             if (err) {
                 sails.log(err);
                 return res.send(500, {
@@ -22,7 +22,7 @@ module.exports = {
     },
     addSpouse: function(req, res) {
         var spouse = {},
-            spousesLength = defaultJSON.zene.length;
+            spousesLength = sails.config.jsonContent.zene.length;
         toJson(req.rawBody, function(err, data) {
             if (err) {
                 sails.log(err);
@@ -35,8 +35,8 @@ module.exports = {
             spouse.slika=data.item.slika;
             spouse.djeca=data.item.djeca || [];
 
-            sails.log(spouse);
-            defaultJSON.zene[spousesLength - 1] = spouse;
+            sails.log(sails.config.jsonContent.zene[spousesLength - 1]);
+            sails.config.jsonContent.zene[spousesLength] = spouse;
             res.send({
                 status: 200
             });
@@ -44,7 +44,7 @@ module.exports = {
     },
     addChild: function(req, res) {
         var childInfo = {},
-            spousesLength = defaultJSON.zene.length,
+            spousesLength = sails.config.jsonContent.zene.length,
             spouseExist = false;
         toJson(req.rawBody, function(err, data) {
             if (err) {
@@ -55,7 +55,7 @@ module.exports = {
             }
             childInfo=data.item;
             for (var i = 0; i < spousesLength; i++) {
-                var tmpSpouse = defaultJSON.zene[i];
+                var tmpSpouse = sails.config.jsonContent.zene[i];
                 if (tmpSpouse.ime == childInfo.zena) {
                     if ("djeca" in tmpSpouse) {
                         delete childInfo.zena;
